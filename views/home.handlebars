@@ -1,0 +1,25 @@
+  
+    <div class="row" style="padding: 40px;">
+        <div class="col-6">
+             <h1>Lista de Posts: </h1>
+            {{#each posts}}
+            <h1>Id: {{id}}</h1>
+            <h2>Titulo: {{titulo}}</h2>
+            <p>Conteudo: {{conteudo}}</p>
+            <p>Data: {{createdAt}}</p>
+            <a href="/deletar/{{id}}"><button  class="btn btn-outline-danger">Deletar</button></a>
+            <a href="/alterar/{{id}}"><button  class="btn btn-outline-warning">Alterar</button></a>
+            <hr>
+            {{/each}}
+        </div>
+        <div class="col-6" style="padding-left: 100px;">
+             <h1>fazer um Post: </h1>
+            <form action="/add" method="POST">
+                <p>Titulo: </p>
+                <input type="text" name="titulo">
+                <p>Conteudo: </p>
+                <textarea name="conteudo"></textarea><br><br>
+                <button type="submit" class="btn btn-outline-success">Enviar</button>
+            </form>
+        </div>
+    </div>
